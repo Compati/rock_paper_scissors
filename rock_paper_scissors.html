@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+  <meta charset="UTF-8"/>
+</head>
+<body>
+  <script>
+
+    let playerSelection;
+    let computerSelection;
+    let playerScore = 0;
+    let computerScore = 0;
+
+    let ArrayRPS = ["rock", "paper", "scissors"];
+    function computerPlay(){
+      return ArrayRPS[Math.floor(Math.random()*ArrayRPS.length)];
+    }
+
+    function singleRound(playerSelection, computerSelection){
+      playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+      computerSelection = computerPlay();
+      console.log(playerSelection);
+      if ((playerSelection == "rock" && computerSelection == "scissors") 
+      || (playerSelection == "paper" && computerSelection == "rock") 
+      || (playerSelection == "scissors" && computerSelection == "paper")){
+        playerScore = ++playerScore;
+        return "You Win! " + playerSelection + " beats " + computerSelection + "  Player " + playerScore + " Computer " + computerScore
+      }
+      else if (playerSelection == computerSelection){
+        return "Draw!"
+      }
+      else {
+        computerScore = ++computerScore;
+        return "You Lose! " + computerSelection + " beats " + playerSelection + "  Player " + playerScore + " Computer " + computerScore
+      }
+    }
+
+    function game(){
+      console.log(singleRound(playerSelection, computerSelection));
+      console.log(singleRound(playerSelection, computerSelection));
+      console.log(singleRound(playerSelection, computerSelection));
+      console.log(singleRound(playerSelection, computerSelection));
+      console.log(singleRound(playerSelection, computerSelection));
+     if (playerScore > computerScore){
+       return "You beat the computer!  Congrats!"
+     }
+     else if (playerScore < computerScore){
+       return "The computer beat you!  Try Again."
+     }
+     else{
+       return "You tied with computer."
+     }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+    /* First try - hit a block and started over with above
+    let playerSelection;
+    let computerSelection;
+    const rockPaperScissors = ["rock", "paper", "scissors"];
+    let computerScore = 0;
+    let playerScore = 0;
+    let scoreTotal = computerScore + playerScore;
+    console.log(scoreTotal);
+    //Computer randomly picks rock paper or scissors
+    function computerPlay(){
+      return rockPaperScissors[Math.floor(Math.random()*rockPaperScissors.length)];
+    }
+    console.log(computerPlay());
+    computerSelection = computerPlay()
+    
+    
+    //Compare computer selection against user input - single round of rock paper scissors
+    function playRound(playerSelection, computerSelection){
+     
+      //User input rock paper or scissors
+      playerSelection = prompt("Rock Paper or Scissors?").toLowerCase();
+
+      if (playerSelection == "rock" && computerSelection == "scissors"){
+        playerScore = ++playerScore;
+        return "You Win! Rock beats Scissors!"
+        console.log(gameScore);
+      }
+      else if (playerSelection == "rock" && computerSelection == "paper"){
+        computerScore = ++computerScore;
+        return "You Lose! Paper beats Rock!"
+        console.log(gameScore);
+      }
+      else if (playerSelection == "paper" && computerSelection == "rock"){
+        playerScore = ++playerScore;
+        return "You Win! Paper beats Rock!"
+        console.log(gameScore);
+      }
+      else if (playerSelection == "paper" && computerSelection == "scissors"){
+        computerScore = ++computerScore;
+          return "You Lose! Scissors beats Paper!"
+          console.log(gameScore);
+      }
+      else if (playerSelection == "scissors" && computerSelection == "paper"){
+        playerScore = ++playerScore;
+        return "You Win! Scissors beats Paper!"
+        console.log(gameScore);
+      }
+      else if (playerSelection == "scissors" && computerSelection == "rock"){
+        computerScore = ++computerScore;
+        return "You Lose! Rock beats Scissors!"
+        console.log(gameScore);
+      }
+      else (playerSelection == computerSelection)
+        return "Draw!";
+        console.log(gameScore);
+      }
+
+      let gameScore = "Player " + playerScore + " Computer " + computerScore;
+      //Play a 5 round game
+
+
+      */
+
+    
+  
+  </script>
+</body>
+</html>
